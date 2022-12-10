@@ -3,16 +3,15 @@
 ## Helm chart for deploying MollySocket in Kubernetes cluster
 
 Prepare your configuration of the MollySocket helm release by creating your values file e.g. `my_values.yml`
-for all options see default values.yaml from the chart: </charts/mollysocket/values.yaml>
+for all options see default values.yaml from the chart: [/charts/mollysocket/values.yaml](/charts/mollysocket/values.yaml)
 
 ```yaml
 
-# There is not yet any container image:
-# https://github.com/orgs/MollySocket/packages?repo_name=mollysocket
-# so genofire has one
 image:
-  repository: ghcr.io/genofire/mollysocket
-  pullPolicy: Always # if the image under same tag is updated
+  ## if the image under same tag is updated
+  pullPolicy: Always
+  ## There is not yet an version tagged container image (just latest):
+  ## https://github.com/MollySocket/mollysocket/pkgs/container/mollysocket/versions?filters%5Bversion_type%5D=tagged
   tag: "latest"
 
 mollysocket:
